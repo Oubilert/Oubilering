@@ -13,7 +13,6 @@ import com.pagoda.test.CtsHelper;
 public class Test extends UiAutomatorTestCase {
 	
 	public static void main(String[] args) {
-		//new UiAutomatorHelper("Demo", "com.jikexueyuan.demo.Demo1", "testBrowser", "1");
 		
 		String workspase, className, jarName, androidId, sdkpath;
 		workspase="E:\\Workspace\\Test";
@@ -24,19 +23,19 @@ public class Test extends UiAutomatorTestCase {
 		CtsHelper cts=new CtsHelper(workspase, className, jarName, androidId, sdkpath);
 		//cts.setDevices("0123456789");
 		cts.runTest();
+		
 
 	}
 	
 	public void testchengshi()throws UiObjectNotFoundException, RemoteException
 	{
-		
-        UiObject chengshiButton = new UiObject(new UiSelector().className("android.widget.TextView").index(0));  
+
+        UiObject chengshiButton = new UiObject(new UiSelector().className("android.widget.TextView").index(0).resourceId("com.pagoda.buy:id/location_text"));  
         assertTrue("oneButton not found", chengshiButton.exists());          
         chengshiButton.click();  
-        sleep(2000); 
-        
-	}
+        sleep(2000);
 	
+	}
 	public void testsousuo()throws UiObjectNotFoundException, RemoteException
 	{
 		
@@ -47,8 +46,8 @@ public class Test extends UiAutomatorTestCase {
         
       
 	}
-	//快速调试
 	/*
+	//快速调试
 	public static void main(String[] args){
 	   	 String jarName="build";
 	   	 String testClass="com.pagoda.test.Test";
